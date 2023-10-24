@@ -1,0 +1,16 @@
+{
+    "name": "htlw3r/composer-demo",
+    "description": "Demonstration for using composer in PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Htlw3r\\ComposerDemo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anil Kapan"
+        }
+    ],
+    "require": {}
+}
