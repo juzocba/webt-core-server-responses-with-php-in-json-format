@@ -24,4 +24,5 @@ $seeder = new DemoSeeder();
 $demoOSTs = $seeder->generateDemoData();
 
 
-echo json_encode($demoOSTs, JSON_PRETTY_PRINT);
+$ost2Json = json_encode($demoOSTs, JSON_PRETTY_PRINT);
+file_put_contents("ost2.json", $ost2Json);

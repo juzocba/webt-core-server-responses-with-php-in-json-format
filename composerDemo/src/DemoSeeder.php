@@ -15,7 +15,7 @@ class DemoSeeder
             $ost = new VidOST($i, "OST $i", "Video Game $i", 2023);
 
             for ($j = 1; $j <= 4; $j++) {
-                $track = new Song($j, "Track $j", "Artist $i", $j, "3:30");
+                $track = new Song($j, "Track $j", "Artist $j", $j, "3:30");
                 $ost->addSong($track);
             }
 
