@@ -3,15 +3,15 @@
 namespace Htlw3r\ComposerDemo;
 use JsonSerializable;
 
-require 'Song.php';
+require_once 'Song.php';
 
 class VidOST implements JsonSerializable
 {
-    private $id;
-    private $name;
-    private $vgname;
-    private $releaseyear;
-    private $tracklist = array();
+    private int $id;
+    private string $name;
+    private string $vgname;
+    private int $releaseyear;
+    private array $tracklist;
 
     public function __construct($id, $name, $vgname, $releaseyear)
     {
@@ -21,10 +21,9 @@ class VidOST implements JsonSerializable
         $this->releaseyear = $releaseyear;
     }
 
-    public function addSong($song): array
+    public function addSong($song)
     {
         $this->tracklist[] = $song;
-        return $this->tracklist;
     }
 
     public function jsonSerialize(): mixed
@@ -34,7 +33,8 @@ class VidOST implements JsonSerializable
             'name' => $this->name,
             'vgname' => $this->vgname,
             'releaseyear' => $this->releaseyear,
-            'tracklist' => $this->tracklist,
+            'tracklist' => $this->tracklist
         ];
     }
+
 }

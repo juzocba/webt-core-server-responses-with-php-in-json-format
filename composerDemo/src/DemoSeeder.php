@@ -2,7 +2,7 @@
 
 namespace Htlw3r\ComposerDemo;
 
-require 'VidOST.php';
+require_once 'VidOST.php';
 
 class DemoSeeder
 {
@@ -15,8 +15,7 @@ class DemoSeeder
             $ost = new VidOST($i, "OST $i", "Video Game $i", 2023);
 
             for ($j = 1; $j <= 4; $j++) {
-                $track = new Song($j, "Track $j", "Artist $j", $j, "3:30");
-                $ost->addSong($track);
+                $ost->addSong(new Song($j, "Track $j", "Artist $j", $j, "3:30"));
             }
 
             $demoOSTs[] = $ost;

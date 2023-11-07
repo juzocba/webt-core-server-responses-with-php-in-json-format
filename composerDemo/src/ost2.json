@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "OST 1",
+        "vgname": "Video Game 1",
+        "releaseyear": 2023,
+        "tracklist": [
+            {
+                "id": 1,
+                "name": "Track 1",
+                "artist": "Artist 1",
+                "tracknumber": 1,
+                "duration": "3:30"
+            },
+            {
+                "id": 2,
+                "name": "Track 2",
+                "artist": "Artist 2",
+                "tracknumber": 2,
+                "duration": "3:30"
+            },
+            {
+                "id": 3,
+                "name": "Track 3",
+                "artist": "Artist 3",
+                "tracknumber": 3,
+                "duration": "3:30"
+            },
+            {
+                "id": 4,
+                "name": "Track 4",
+                "artist": "Artist 4",
+                "tracknumber": 4,
+                "duration": "3:30"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "OST 2",
+        "vgname": "Video Game 2",
+        "releaseyear": 2023,
+        "tracklist": [
+            {
+                "id": 1,
+                "name": "Track 1",
+                "artist": "Artist 1",
+                "tracknumber": 1,
+                "duration": "3:30"
+            },
+            {
+                "id": 2,
+                "name": "Track 2",
+                "artist": "Artist 2",
+                "tracknumber": 2,
+                "duration": "3:30"
+            },
+            {
+                "id": 3,
+                "name": "Track 3",
+                "artist": "Artist 3",
+                "tracknumber": 3,
+                "duration": "3:30"
+            },
+            {
+                "id": 4,
+                "name": "Track 4",
+                "artist": "Artist 4",
+                "tracknumber": 4,
+                "duration": "3:30"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "OST 3",
+        "vgname": "Video Game 3",
+        "releaseyear": 2023,
+        "tracklist": [
+            {
+                "id": 1,
+                "name": "Track 1",
+                "artist": "Artist 1",
+                "tracknumber": 1,
+                "duration": "3:30"
+            },
+            {
+                "id": 2,
+                "name": "Track 2",
+                "artist": "Artist 2",
+                "tracknumber": 2,
+                "duration": "3:30"
+            },
+            {
+                "id": 3,
+                "name": "Track 3",
+                "artist": "Artist 3",
+                "tracknumber": 3,
+                "duration": "3:30"
+            },
+            {
+                "id": 4,
+                "name": "Track 4",
+                "artist": "Artist 4",
+                "tracknumber": 4,
+                "duration": "3:30"
+            }
+        ]
+    }
+]
