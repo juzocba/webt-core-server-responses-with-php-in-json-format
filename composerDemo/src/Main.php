@@ -16,7 +16,6 @@ $ost->addSong($song2);
 
 
 $ost1Json = json_encode($ost, JSON_PRETTY_PRINT);
-echo $ost1Json;
 file_put_contents("ost1.json", $ost1Json);
 
 
