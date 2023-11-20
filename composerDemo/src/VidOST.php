@@ -26,6 +26,31 @@ class VidOST implements JsonSerializable
         $this->tracklist[] = $song;
     }
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getVgname(): string
+    {
+        return $this->vgname;
+    }
+
+    public function getReleaseyear(): int
+    {
+        return $this->releaseyear;
+    }
+
+    public function getTracklist(): array
+    {
+        return $this->tracklist;
+    }
+
     public function jsonSerialize(): mixed
     {
         return [

@@ -1,12 +1,63 @@
 <?php
 
+
 namespace Htlw3r\ComposerDemo;
-require 'src\VidOST.php';
+require 'src/DemoSeeder.php';
 
-$song = json_encode(new \Htlw3r\ComposerDemo\Song(1, "jsonSong", "Typo 2", 1, "13:49"));
-$songDecode = json_decode($song);
+# User Story 1
+$song1 = new Song(1, "Song 1", "Artist 1", 1, "3:30");
+$song2 = new Song(2, "Song 2", "Artist 2", 2, "4:15");
 
-echo $songDecode->id;
-$songDecode->name = $_GET['jsonSong'] ?? 'none';
+$ost = new VidOST(101, "OST 1", "Video Game A", 2023);
+$ost->addSong($song1);
+$ost->addSong($song2);
 
-echo $songDecode->name;
+
+$ost1Json = json_encode($ost, JSON_PRETTY_PRINT);
+file_put_contents("ost1.json", $ost1Json);
+
+
+# User Story 2
+$seeder = new DemoSeeder();
+$demoOSTs = $seeder->generateDemoData();
+
+
+$ost2Json = json_encode($demoOSTs, JSON_PRETTY_PRINT);
+file_put_contents("ost2.json", $ost2Json);
+
+
+# User Story
+if (isset($_GET['id'])) {
+    $requestedId = $_GET['id'];
+
+    $found = false;
+    foreach ($demoOSTs as $ost) {
+        if ($ost->getId() == $requestedId) {
+            // Convert OST data to an associative array
+            $ostData = [
+                'id' => $ost->getId(),
+                'name' => $ost->getName(),
+                'videoGame' => $ost->getVgname(),
+                'releaseYear' => $ost->getReleaseyear(),
+                'tracklist' => $ost->getTracklist()
+            ];
+
+            // Output as JSON
+            header('Content-Type: application/json');
+            echo json_encode($ostData, JSON_PRETTY_PRINT);
+
+            $found = true;
+            break;
+        }
+    }
+
+    if (!$found) {
+        header('Content-Type: application/json');
+        echo json_encode($demoOSTs, JSON_PRETTY_PRINT);
+    }
+} else {
+    // No 'id' parameter provided
+    echo json_encode(['error' => 'No information given - please add an "id" parameter!'], JSON_PRETTY_PRINT);
+}
+
+

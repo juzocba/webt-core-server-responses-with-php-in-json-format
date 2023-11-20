@@ -18,6 +18,31 @@ class Song implements \JsonSerializable
         $this->duration = $duration;
     }
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getArtist(): string
+    {
+        return $this->artist;
+    }
+
+    public function getTracknumber(): int
+    {
+        return $this->tracknumber;
+    }
+
+    public function getDuration(): string
+    {
+        return $this->duration;
+    }
+
 
 
     public function jsonSerialize(): mixed
