@@ -10,7 +10,6 @@ class DemoSeeder
     {
         $demoOSTs = [];
 
-
         for ($i = 1; $i <= 3; $i++) {
             $ost = new VidOST($i, "OST $i", "Video Game $i", 2023);
 

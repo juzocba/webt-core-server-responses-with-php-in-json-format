@@ -26,14 +26,14 @@ $ost2Json = json_encode($demoOSTs, JSON_PRETTY_PRINT);
 file_put_contents("ost2.json", $ost2Json);
 
 
-# User Story
+# User Story 3,4
 if (isset($_GET['id'])) {
     $requestedId = $_GET['id'];
 
     $found = false;
     foreach ($demoOSTs as $ost) {
         if ($ost->getId() == $requestedId) {
-            // Convert OST data to an associative array
+
             $ostData = [
                 'id' => $ost->getId(),
                 'name' => $ost->getName(),
@@ -42,12 +42,10 @@ if (isset($_GET['id'])) {
                 'tracklist' => $ost->getTracklist()
             ];
 
-            // Output as JSON
             header('Content-Type: application/json');
             echo json_encode($ostData, JSON_PRETTY_PRINT);
 
             $found = true;
-            break;
         }
     }
 
@@ -56,8 +54,7 @@ if (isset($_GET['id'])) {
         echo json_encode($demoOSTs, JSON_PRETTY_PRINT);
     }
 } else {
-    // No 'id' parameter provided
-    echo json_encode(['error' => 'No information given - please add an "id" parameter!'], JSON_PRETTY_PRINT);
+    echo 'No information given - please add an "id" parameter!';
 }
 
 
